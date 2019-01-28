@@ -1,7 +1,7 @@
 <!-- $theme: gaia -->
 
 # Introduction to @color[orange](**Rust**)
-#### Created by [Tim Bess](https://github.com/tdbgamer)
+#### by [Tim Bess](https://github.com/tdbgamer)
 
 
 ---
@@ -34,7 +34,27 @@
 
 #### Cons
 - Very slow
-    - pypy is making things better, but still needs work to be compatible with many python libraries.
-    - Scientific python users have to offload as much work as possible onto pandas/numpy to be performant.
+    - pypy is making things better, but still needs work to be compatible with many Python libraries.
+    - Scientific Python users have to offload as much work as possible onto pandas/numpy to be performant.
 - Difficult to refactor.
     - Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
+
++++
+
+## Oxidizing Python
+
+#### CFFI Method
+- CBindgen + Milksnake allow for relatively seamless build process for calling out to Rust from Python.
+- Uses CFFI which allows for compatibility with Pypy.
+- Limited in that Python must call out to Rust, Rust can't call out to Python
+
++++
+
+
+## Oxidizing Python
+
+#### CPython Integration
+- Link against Python C headers using PyO3.
+- Directly interacts with CPython interpreter and allows two way function calls.
+- Potentially (slightly) lower overhead for calling out to Rust.
+- Limited to CPython interpreter.
