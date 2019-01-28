@@ -26,7 +26,9 @@ High level languages offer low mental overhead and speed of developement, but ar
 - Allow for clean, terse code.
 - Plethora of libraries at your fingertips.
 
-___
+---
+
+# Python
 
 #### Cons
 - Very slow
