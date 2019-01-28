@@ -1,6 +1,6 @@
 <!-- $theme: gaia -->
 
-# Introduction to ==Rust==
+# Introduction to **Rust**
 #### Created by [Tim Bess](https://github.com/tdbgamer)
 
 
@@ -8,7 +8,7 @@
 
 # What is Rust
 - Non-GC'd systems level language.
-- Focused on ==safety==, ==performance==, ==concurrency==, and ==interoperability==.
+- Focused on **safety**, **performance**, **concurrency**, and **interoperability**.
 - Designed to make systems level software more accessible to developers.
 
 ---
