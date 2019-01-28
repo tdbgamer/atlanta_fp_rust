@@ -1,6 +1,6 @@
 <!-- $theme: gaia -->
 
-# Introduction to **Rust**
+# Introduction to @color[orange](**Rust**)
 #### Created by [Tim Bess](https://github.com/tdbgamer)
 
 
