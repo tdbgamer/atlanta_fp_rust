@@ -32,7 +32,7 @@ High level languages offer low mental overhead and speed of developement, but ar
 
 #### Cons
 - Very slow
-    - pypy is making things better, but still needs work to be compatible certain python libraries.
-    - With scientific python, users have to offload as much work as possible onto pandas/numpy to be performant.
+    - pypy is making things better, but still needs work to be compatible with many python libraries.
+    - Scientific python users have to offload as much work as possible onto pandas/numpy to be performant.
 - Difficult to refactor.
     - Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
