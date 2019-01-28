@@ -46,7 +46,8 @@
 #### CFFI Method
 - CBindgen + Milksnake allow for relatively seamless build process for calling out to Rust from Python.
 - Uses CFFI which allows for compatibility with Pypy.
-- Limited in that Python must call out to Rust, Rust can't call out to Python
+- Limited in that Python must call out to Rust.
+- No coupling to CPython interpreter.
 
 +++
 
