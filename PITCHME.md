@@ -19,3 +19,16 @@ High level languages offer low mental overhead and speed of developement, but ar
 ---
 
 # Python
+
+#### Pros
+- Approachable for beginners.
+- Excellent for fast prototyping while requirements are poorly defined.
+- Allow for clean, terse code.
+- Plethora of libraries at your fingertips.
+
+#### Cons
+- Very slow
+    - pypy is making things better, but still needs work to be compatible certain python libraries.
+    - With scientific python, users have to offload as much work as possible onto pandas/numpy to be performant.
+- Difficult to refactor since type hints were added fairly recently and aren't commonly used.
+    - Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
