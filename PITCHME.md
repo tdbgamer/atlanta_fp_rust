@@ -6,7 +6,7 @@
 
 ---
 
-@title[What is Rust?]
+## What is Rust?
 - @color[orange](**Non-GC**)'d systems level language.
 - Focused on @color[orange](**safety**), @color[orange](**performance**), @color[orange](**concurrency**), and @color[orange](**interoperability**).
 - Designed to make systems level software more accessible to developers.
@@ -14,11 +14,13 @@
 ---
 
 ## Why do I need Rust?
-High level languages offer low mental overhead and speed of developement, but aren't usually performant.
+- High level languages offer low mental overhead and speed of developement, but aren't usually performant.
+    Developers can drop down into Rust where traditionally C had been used.
+- Applications with high cost of failure or where correctness and refactorability are valuable.
 
 ---
 
-@title[Python]
+## Usecase: Python
 
 #### Pros
 - Approachable for beginners.
