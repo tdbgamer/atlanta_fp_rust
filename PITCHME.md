@@ -8,7 +8,7 @@
 
 # What is Rust
 - Non-GC'd systems level language.
-- Focused on **safety**, **performance**, **concurrency**, and **interoperability**.
+- Focused on @color[orange](**safety**), **performance**, **concurrency**, and **interoperability**.
 - Designed to make systems level software more accessible to developers.
 
 ---
