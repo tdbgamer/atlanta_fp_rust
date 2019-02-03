@@ -39,6 +39,7 @@
 ## Data races
 - Rust guarantees pointers must be exclusively aliased or mutated.
 - Send/Sync traits force types to explicitly define whether they can be sent between threads and/or shared between threads respectively
+- Most structs that own their fields automatically implement Send.
 - This prevents _many_ types of data races
 
 ---
