@@ -25,7 +25,7 @@
 - Will not @color[orange](**segfault**).
 - Will not allow classes of @color[orange](**data races**).
 - Will not allow @color[orange](**memory leaks**).
-- @color[orange](**Zero**) cost abstractions.
+- @color[orange](**Zero-cost**) abstractions.
 
 ---
 
