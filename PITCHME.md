@@ -38,7 +38,6 @@
 
 +++
 
-## Safe references
 
 ```rust
 // Option is defined in stdlib as
