@@ -14,9 +14,10 @@
 ---
 
 ## Why do I need Rust?
+- When C-level performance is needed, but without the low level stumbling blocks.
+- Applications with high cost of failure or where correctness and refactorability are valuable.
 - High level languages offer low mental overhead and speed of development, but aren't usually performant.
     Developers can drop down into Rust where traditionally C has been used.
-- Applications with high cost of failure or where correctness and refactorability are valuable.
 
 ---
 
