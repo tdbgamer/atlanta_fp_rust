@@ -124,6 +124,11 @@ fn main() {
 
 ---
 
+## Live coding!
+Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/)
+
+---
+
 ## Usecase: Python
 
 #### Pros
