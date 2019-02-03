@@ -15,7 +15,7 @@
 
 ## Why do I need Rust?
 - High level languages offer low mental overhead and speed of development, but aren't usually performant.
-    Developers can drop down into Rust where traditionally C had been used.
+    Developers can drop down into Rust where traditionally C has been used.
 - Applications with high cost of failure or where correctness and refactorability are valuable.
 
 ---
@@ -117,7 +117,9 @@ fn main() {
 
 ---
 
+## Zero-cost abstractions
 
+- Rust compiler has deep insight into lifetimes of objects, mutability, and many guarantees that allow it to do optimizations.
 
 ---
 
