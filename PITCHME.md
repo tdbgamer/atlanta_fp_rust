@@ -38,7 +38,6 @@
 
 +++
 
-
 ```rust
 // Option is defined in stdlib as
 // pub enum Option<T> {
