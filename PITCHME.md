@@ -134,6 +134,15 @@ fn main() {
 
 ---
 
+## C Interop
+- Rust has two way FFI support with C.
+- Structs can optionally use C layout so that C code can read/mutate Rust structs.
+- Bindgen can be used to generate Rust definitely for C foreign functions.
+- Compatible with C ABI and can generate C header files for Rust libs through CBindgen.
+- Because CBindgen generates C header files, many interpreted languages can call out to Rust just like C.
+
+---
+
 ## Live coding!
 Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/) or by [installing rustup](https://www.rust-lang.org/tools/install).
 
