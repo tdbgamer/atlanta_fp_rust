@@ -1,5 +1,5 @@
 [package]
-name = "rust_ex_1"
+name = "rust_ex_1_solution"
 version = "0.1.0"
 authors = ["Timothy Bess <tdbgamer@gmail.com>"]
 edition = "2018"

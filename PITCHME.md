@@ -20,6 +20,87 @@
 
 ---
 
+## Rust Features
+
+- Will not segfault.
+- Will not allow data races.
+- Will not leak memory.
+- Zero cost abstractions.
+
+---
+
+## Ownership System
+- Rust compiler keeps track of who owns a variable throughout the program.
+
+#### Ownership Rules
+- Each value in Rust has a variable that’s called its owner.
+- There can only be one owner at a time.
+- When the owner goes out of scope, the value will be dropped.
+
+#### Borrowing Rules
+- At any given time, you can have _either_ one mutable reference or any number of immutable references.
+- References must always be valid.
+
++++
+
+## Ownership System
+
+#### Example 1
+```rust
+fn main() {
+    {
+        // foo is owned in this scope
+        let foo = String::from("bar");
+    } // foo is dropped and freed
+    
+    // Fails to compile
+    println!("{}", foo);
+}
+```
+
++++
+
+## Ownership System
+
+#### Example 2
+```rust
+fn takes_string(foo: String) { // foo is an owned string
+    // Does things with foo
+} // Drops foo
+
+fn main() {
+    let foo = String::from("bar");
+    
+    takes_string(foo); // Ownership is MOVED to takes_string
+    
+    // Fails to compile
+    // string was moved into takes_string
+    println!("{}", foo);
+}
+```
+
++++
+
+## Ownership System
+
+#### Example 3
+```rust
+fn takes_string(foo: &String) { // foo is an immutably borrowed string
+    // Does things with foo
+} // drops borrow
+
+fn main() {
+    let foo = String::from("bar");
+    
+    takes_string(&foo); // give an immutable borrow to takes_string
+    
+    // Compiles successfully!
+    println!("{}", foo);
+} // foo is dropped
+```
+
+---
+
 ## Usecase: Python
 
 #### Pros
