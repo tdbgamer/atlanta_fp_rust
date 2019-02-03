@@ -125,7 +125,7 @@ fn main() {
 ---
 
 ## Live coding!
-Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/)
+Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/) or by [installing rustup](https://www.rust-lang.org/tools/install).
 
 ---
 
