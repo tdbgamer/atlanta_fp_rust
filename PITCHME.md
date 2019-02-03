@@ -57,6 +57,7 @@ fn main() {
     // Value may either be None, or a Some(string)
     let foo = get_value();
     
+    // Use pattern matching to extract the value from the enum
     match foo {
         Some(val) => { println!("{}", val); },
         None => { println!("No value!"); },
