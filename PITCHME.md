@@ -3,6 +3,15 @@
 # Introduction to @color[orange](**Rust**)
 #### by [Tim Bess](https://github.com/tdbgamer)
 
+---
+
+## Brief History
+
+- Started at Mozilla in 2006.
+- Mozilla sponsored the language in hopes it could be used to improve Firefox.
+- Went on to be used to build Servo.
+- Pieces of Servo were put into Firefox in the FF Quantum release.
+- Browser overall speed was massively improved.
 
 ---
 
@@ -57,7 +66,7 @@ fn main() {
     // Value may either be None, or a Some(string)
     let foo = get_value();
     
-    // Use pattern matching to extract the value from the enum
+    // Extract the value from the enum
     match foo {
         Some(val) => { println!("{}", val); },
         None => { println!("No value!"); },
