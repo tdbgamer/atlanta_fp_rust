@@ -23,8 +23,8 @@
 ## Rust Features
 
 - Will not segfault.
-- Will not allow data races.
-- Will not leak memory.
+- Will not allow certain classes data races.
+- Will not allow allocated memory to go unfreed.
 - Zero cost abstractions.
 
 ---
@@ -38,7 +38,8 @@
 
 ## Data races
 - Rust guarantees pointers must be exclusively aliased or mutated.
-- Send/Sync traits force types to explicitly define whether they can be sent between threads or shared between threads respectively
+- Send/Sync traits force types to explicitly define whether they can be sent between threads and/or shared between threads respectively
+- This prevents _many_ types of data races
 
 ---
 
