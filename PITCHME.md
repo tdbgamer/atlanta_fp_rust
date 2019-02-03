@@ -62,11 +62,6 @@ fn main() {
 }
 ```
 
-#### Output
-```
-Foobar
-```
-
 ---
 
 ## Data races
