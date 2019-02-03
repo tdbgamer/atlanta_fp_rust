@@ -37,6 +37,8 @@
 ---
 
 ## Data races
+- Rust guarantees pointers must be exclusively aliased or mutated.
+- Send/Sync traits force types to explicitly define whether they can be sent between threads or shared between threads respectively
 
 ---
 
