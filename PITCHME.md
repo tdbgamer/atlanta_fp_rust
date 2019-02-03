@@ -30,8 +30,6 @@
 ---
 
 ## Ownership System
-- Rust compiler keeps track of who owns a variable throughout the program.
-
 #### Ownership Rules
 - Each value in Rust has a variable that’s called its owner.
 - There can only be one owner at a time.
