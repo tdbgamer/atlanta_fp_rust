@@ -13,8 +13,8 @@
 
 ---
 
-## Why do I need Rust?
-- When C-level performance is needed, but without the low level stumbling blocks.
+## When is Rust Useful?
+- When C-level performance is needed, but without the associated low level stumbling blocks.
 - Applications with high cost of failure or where correctness and refactorability are valuable.
 - High level languages offer low mental overhead and speed of development, but aren't usually performant.
     Developers can drop down into Rust where traditionally C has been used.
@@ -34,6 +34,38 @@
 - Pointer aliasing and mutability are not mixed (compile-time guarantee).
 - Pointers never live longer than the data they hold.
 - Array types provide safe bounds checking, unlike C.
+- Nulls cannot be created or accidentally dereferenced.
+
++++
+
+## Safe references
+
+```rust
+// Option is defined in stdlib as
+// pub enum Option<T> {
+//     None,
+//     Some(T),
+// }
+
+fn get_value() -> Option<String> {
+    Some(String::from("Foobar"))
+}
+
+fn main() {
+    // Value may either be None, or a Some(string)
+    let foo = get_value();
+    
+    match foo {
+        Some(val) => { println!("{}", val); },
+        None => { println!("No value!"); },
+    }
+}
+```
+
+#### Output
+```
+Foobar
+```
 
 ---
 
