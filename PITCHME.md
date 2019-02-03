@@ -137,6 +137,7 @@ fn main() {
 ## Usecase: Python
 
 #### Cons
+- GIL limits parallel processing.
 - Very slow
     - pypy is making things better, but still needs work to be compatible with many Python libraries.
     - Scientific Python users have to offload as much work as possible onto pandas/numpy to be performant.
