@@ -23,7 +23,7 @@
 ## Rust Features
 
 - Will not @color[orange](**segfault**).
-- Will not allow certain classes of @color[orange](**data races).
+- Will not allow certain classes of @color[orange](**data races**).
 - Will not allow @color[orange](**memory leaks**).
 - @color[orange](**Zero**) cost abstractions.
 
