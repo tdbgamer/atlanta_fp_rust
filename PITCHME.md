@@ -29,7 +29,18 @@
 
 ---
 
-## Ownership System
+## Safe references
+- Pointer aliasing and mutability are not mixed (compile-time guarantee).
+- Pointers never live longer than the data they hold.
+- Array types provide safe bounds checking, unlike C.
+
+---
+
+## Data races
+
+---
+
+### Ownership System
 #### Ownership Rules
 - Each value in Rust has a variable that’s called its owner.
 - There can only be one owner at a time.
@@ -62,14 +73,16 @@ fn main() {
 
 #### Example 2
 ```rust
-fn takes_string(foo: String) { // foo is an owned string
+// foo is an owned string
+fn takes_string(foo: String) {
     // Does things with foo
 } // Drops foo
 
 fn main() {
     let foo = String::from("bar");
-    
-    takes_string(foo); // Ownership is MOVED to takes_string
+
+    // Ownership is MOVED to takes_string
+    takes_string(foo);
     
     // Fails to compile
     // string was moved into takes_string
@@ -83,19 +96,25 @@ fn main() {
 
 #### Example 3
 ```rust
-fn takes_string(foo: &String) { // foo is an immutably borrowed string
+// foo is an immutably borrowed string
+fn takes_string(foo: &String) {
     // Does things with foo
 } // drops borrow
 
 fn main() {
     let foo = String::from("bar");
-    
-    takes_string(&foo); // give an immutable borrow to takes_string
+
+    // give an immutable borrow to takes_string
+    takes_string(&foo);
     
     // Compiles successfully!
     println!("{}", foo);
 } // foo is dropped
 ```
+
+---
+
+
 
 ---
 
