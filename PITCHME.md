@@ -120,6 +120,7 @@ fn main() {
 ## Zero-cost abstractions
 
 - Rust compiler has deep insight into lifetimes of objects, mutability, and many guarantees that allow it to do optimizations.
+- Many high level abstractions, like futures or iterators, are completely torn out at compile time.
 
 ---
 
