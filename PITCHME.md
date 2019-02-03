@@ -22,10 +22,10 @@
 
 ## Rust Features
 
-- Will not segfault.
-- Will not allow certain classes data races.
-- Will not allow allocated memory to go unfreed.
-- Zero cost abstractions.
+- Will not @color[orange](**segfault**).
+- Will not allow certain classes of @color[orange](**data races).
+- Will not allow @color[orange](**memory leaks**).
+- @color[orange](**Zero**) cost abstractions.
 
 ---
 
