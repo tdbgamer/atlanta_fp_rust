@@ -129,7 +129,7 @@ fn main() {
 #### Pros
 - Approachable for beginners.
 - Excellent for fast prototyping while requirements are poorly defined.
-- Allow for clean, terse code.
+- Allows for clean, terse code.
 - Plethora of libraries at your fingertips.
 
 +++
@@ -155,7 +155,6 @@ fn main() {
 - No coupling to CPython interpreter.
 
 +++
-
 
 ## Oxidizing Python
 
