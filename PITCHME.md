@@ -42,11 +42,13 @@
 
 ```rust
 // Option is defined in stdlib as
-// pub enum Option<T> {
-//     None,
-//     Some(T),
-// }
+pub enum Option<T> {
+    None,
+    Some(T),
+}
+```
 
+```rust
 fn get_value() -> Option<String> {
     Some(String::from("Foobar"))
 }
