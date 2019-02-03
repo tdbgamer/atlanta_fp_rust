@@ -130,6 +130,7 @@ fn main() {
 - Allows for raw pointers, aliasing, mutation, etc. All the things the Rust compiler normally prevents.
 - Unsafe should not be used to bypass safety guarantees, but instead to provide safe abstractions over unsafe code.
 - Many stdlib types that offer safety are built on unsafe code that has been hand verified.
+- Necessary for FFI code.
 
 ---
 
