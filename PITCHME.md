@@ -170,7 +170,7 @@ fn main() {
 #### Example 1
 ```rust
 trait Animal {
-    fn speak(&this) -> String;
+    fn speak(&self) -> String;
 }
 ```
 
@@ -188,6 +188,51 @@ fn main() {
     let animals: Vec<&dyn Animal> = vec![&Dog, &Cat];
     println!("{:?}", animals.iter().map(|x| x.speak())
                             .collect::<Vec<String>>());
+}
+```
+
++++
+
+## Zero-cost abstractions
+
+#### Example 2
+
+```rust
+enum Animal { Dog, Cat }
+
+impl Animal {
+    fn speak(&self) -> String {
+        match self {
+            Dog => "Woof".to_string()
+            Cat => "Meow".to_string()
+        }
+    }
+}
+fn main() {
+    let animals: Vec<Animal> = vec![Animal::Dog, Animal::Cat];
+    println!("{:?}", animals.iter().map(|x| x.speak())
+                            .collect::<Vec<String>>());
+}
+```
+
++++
+
+## Zero-cost abstractions
+
+#### Example 3
+```rust
+use std::fmt::Debug;
+fn debug_string<T: Debug>(obj: T) -> String {
+    format!("{:?}", obj)
+}
+fn debug_string_dynamic(obj: &dyn Debug) -> String {
+    format!("{:?}", obj)
+}
+fn main() {
+    println!("{}", debug_string(vec![1, 2, 3]));
+    println!("{}", debug_string("foobar"));
+    println!("{}", debug_string_dynamic(&vec![1, 2, 3]));
+    println!("{}", debug_string_dynamic(&"foobar"));
 }
 ```
 

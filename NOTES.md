@@ -71,3 +71,29 @@ Without further ado, let's get started.
 - In languages like Java, dynamic method dispatch all over the place is fine because the JIT can figure things out at compile time
   that allow it to inline and optimize very dynamic code.
 - The downside for some is that this forces developers to break away from the traditional OOP paradigm.
+
+#### Example 1
+- This is sort of a tradition OOP example, and this is the sort of Java/C++ OOP way to do it.
+- We start off with an array of references to Animals. These _have_ to be references because Vecs are allocated
+  as a contiguous chuck of memory, and implementations of Animal can have different sizes in memory.
+- The pointer indirection itself has a small inherent cost, but the much larger cost is that calls to `speak()`
+  can't be inlined anymore. It is a dynamic call that must happen every time.
+- This isn't terribly slow, but if used extensively in hot code paths can be a potential performance issues.
+- However in many cases such designs with rigid inheritance hierarchies really aren't a good idea anyways.
+
+#### Example 2
+- This is a preferred way to simulate the same behavior in Rust.
+- The animals can all be contiguously allocated with no references.
+- `speak()` can again be inlined.
+- Matching on a Rust enum compiles to a constant time jump table.
+- This code is more lean, determines more at compile time, and empowers the compiler to optimize the code well.
+
+#### Example 3
+- Another optimization Rust does with generics like this is called Monomorphization.
+- I believe in C++ this is called templating.
+- Basically the compiler generates a version of this function for each type it's used on.
+- For the dynamic version, fat pointers and dynamic dispatch are used instead.
+- The trade-off between dynamic dispatch and statically dispatched is binary size vs performance.
+- Dynamic dispatch will generate a single function that runs more slowly and cannot be optimized as aggressively.
+- Statically dispatch will generate a lot more code, but that code can be aggressively inlined and optimized.
+- Storage is cheap, memory is cheap... Use static dispatch as much as possible.
