@@ -171,7 +171,9 @@ fn main() {
 trait Animal {
     fn speak(&this) -> String;
 }
+``
 
+```rust
 struct Dog;
 struct Cat;
 
