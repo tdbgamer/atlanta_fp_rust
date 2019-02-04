@@ -186,8 +186,7 @@ impl Animal for Cat {
 }
 fn main() {
     let animals: Vec<&dyn Animal> = vec![&Dog, &Cat];
-    println!("{:?}", animals.iter()
-                            .map(|x| x.speak())
+    println!("{:?}", animals.iter().map(|x| x.speak())
                             .collect::<Vec<String>>());
 }
 ```
