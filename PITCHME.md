@@ -167,6 +167,7 @@ fn main() {
 
 ## Zero-cost abstractions
 
+#### Example 1
 ```rust
 trait Animal {
     fn speak(&this) -> String;
@@ -184,8 +185,8 @@ impl Animal for Cat {
     fn speak(&self) -> String { "Meow".to_string() }
 }
 fn main() {
-    let animal: Animal = Dog;
-    println!("{}", animal.speak());
+    let animals: Vec<&dyn Animal> = vec![&Dog, &Cat];
+    println!("{:?}", animals.iter().map(|x| x.speak()).collect::<Vec<String>>());
 }
 ```
 
