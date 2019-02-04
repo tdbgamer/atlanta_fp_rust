@@ -89,11 +89,12 @@ Without further ado, let's get started.
 - This code is more lean, determines more at compile time, and empowers the compiler to optimize the code well.
 
 #### Example 3
-- Another optimization Rust does with generics like this is called Monomorphization.
-- I believe in C++ this is called templating.
+- First take a look at `debug_string`.
+- Rust does an optimization called Monomorphization with generics like this.
+- I believe in C++ calls this templating.
 - Basically the compiler generates a version of this function for each type it's used on.
 - For the dynamic version, fat pointers and dynamic dispatch are used instead.
-- The trade-off between dynamic dispatch and statically dispatched is binary size vs performance.
 - Dynamic dispatch will generate a single function that runs more slowly and cannot be optimized as aggressively.
+- The trade-off between dynamic dispatch and statically dispatched is binary size vs performance.
 - Statically dispatch will generate a lot more code, but that code can be aggressively inlined and optimized.
 - Storage is cheap, memory is cheap... Use static dispatch as much as possible.
