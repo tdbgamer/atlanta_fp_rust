@@ -199,17 +199,17 @@ fn main() {
 
 ```rust
 enum Animal { Dog, Cat }
-
 impl Animal {
     fn speak(&self) -> String {
         match self {
-            Dog => "Woof".to_string()
-            Cat => "Meow".to_string()
+            Animal::Dog => "Woof".to_string(),
+            Animal::Cat => "Meow".to_string()
         }
     }
 }
 fn main() {
-    let animals: Vec<Animal> = vec![Animal::Dog, Animal::Cat];
+    use Animal::*;
+    let animals: Vec<Animal> = vec![Dog, Cat];
     println!("{:?}", animals.iter().map(|x| x.speak())
                             .collect::<Vec<String>>());
 }
