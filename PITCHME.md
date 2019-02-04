@@ -163,6 +163,30 @@ fn main() {
 - Rust compiler offers strict guarantees about lifetimes, mutability, etc. that allow it to do big compile time optimizations.
 - Many high level abstractions, like futures and iterators, are completely torn out at compile time.
 
++++
+
+## Zero-cost abstractions
+
+```rust
+trait Animal {
+    fn speak(&this) -> String;
+}
+
+struct Dog;
+struct Cat;
+
+impl Animal for Dog {
+    fn speak(&self) -> String { "Woof".to_string() }
+}
+impl Animal for Cat {
+    fn speak(&self) -> String { "Meow".to_string() }
+}
+fn main() {
+    let animal: Animal = Dog;
+    println!("{}", animal.speak());
+}
+```
+
 ---
 
 ## Unsafe code

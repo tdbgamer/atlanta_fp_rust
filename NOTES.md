@@ -57,10 +57,17 @@ Without further ado, let's get started.
   aren't used to having to care about when objects are destroyed.
 - The good thing about this is that Rust doesn't let you make that mistake and ensures the memory is freed.
 
-### Example 3
+#### Example 3
 - In this example instead of asking for ownership, takes_string now asks for an
   immutable borrow, or reference, of the given string.
 - After the function runs, the borrow is released, main's scope maintains ownership
   of foo, prints it, then frees it before exiting.
 
 ## Zero-cost abstractions
+- The Rust compiler is smart enough in many cases to, at compile time, optimize away abstractions that you create.
+- To do so, the code must be designed in such a way that as much as possible can be determined at compile-time.
+- While Rust provides useful dynamic features like dynamic method dispatch, they should be used sparringly as those
+  calls cannot be inlined at compile time and very little optimization can be done.
+- In languages like Java, dynamic method dispatch all over the place is fine because the JIT can figure things out at compile time
+  that allow it to inline and optimize very dynamic code.
+- The downside for some is that this forces developers to break away from the traditional OOP paradigm.
