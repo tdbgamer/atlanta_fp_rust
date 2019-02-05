@@ -95,6 +95,7 @@ Without further ado, let's get started.
 - However in many cases such designs with rigid inheritance hierarchies really aren't a good idea anyways.
 
 #### Example 2
+- Match statement is exhaustive.
 - This is a preferred way to simulate the same behavior in Rust.
 - The animals can all be contiguously allocated with no references.
 - `speak()` can again be inlined.
