@@ -38,7 +38,16 @@ Without further ado, let's get started.
 
 ## Data races
 
-- I will define what it means to _own_ something in Rust on the next slide.
+- I will define what it means to _own_ something in Rust in the next section.
+
+#### Send/Sync
+- Send and Sync are unsafe, marker traits that the compiler uses for to determine thread safety of a type.
+- Marker traits have no methods to implement, and are used to indicate some inherent property of a type.
+- Types that implement Send indicate that it is safe to send it to a thread.
+- Types that implement Sync indicate that it is safe to share between multiple threads.
+- They are both auto traits that will attempt to implement themselves for all types that it can determine are inherently Send or Sync.
+- Manually implementing them is unsafe and is basically telling the compiler, "shutup I'll synchronize it."
+- Normally users don't implement Send/Sync themselves, they wrap whatever type they need in wrappers that implement Send/Sync.
 
 ## Ownership System
 
@@ -98,3 +107,33 @@ Without further ado, let's get started.
 - The trade-off between dynamic dispatch and statically dispatched is binary size vs performance.
 - Statically dispatch will generate a lot more code, but that code can be aggressively inlined and optimized.
 - Storage is cheap, memory is cheap... Use static dispatch as much as possible.
+
+## Unsafe Code
+- Bryan Cantrill referred to unsafe blocks as a sort of conjugal visit with your memory.
+- One example of an safe abstraction built over unsafe code is a Mutex wrapper. I'll go over that in a little bit.
+
+#### Mutex example
+- Arc means Atomic Reference counted.
+- Wrapping some data in an Arc makes it implement Send trait which allows reference counted pointers
+  to it to be sent to other threads.
+- I'm not able to mutate the variable unless I have a way to synchronize access to it.
+- Mutex will wrap any type, synchronize access to it, and implements the Sync trait, which tells the compiler
+  that this element is safe to be shared by multiple threads.
+
+- Mutex is a good example of a safe abstraction built on unsafe code.
+- Mutating the same memory from multiple threads is unsafe and not allowed by the Rust compiler.
+- Locking wrapper types like Mutex allow users to synchronize access such that we know for sure the mutation is safe.
+
+
+## C Interop
+- I believe this is an extremely important component to Rust's success.
+- Being able to take advantage of the C ecosystem is a huge deal. 
+- There is lots of finely tuned and highly optimized software out there
+  that the Rust community can tap into just by making simple safe wrappers around
+  old, battle tested, reliable C libraries.
+- There is also an entire universe of software that has been implemented in C
+  that will _never_  and honestly _should_ never be rewritten in Rust.
+- Linux kernel isn't going anywhere, but because Rust has such great two way interop with C,
+  people are starting to experiment with writing Linux kernel modules in Rust.
+- This is the true power of Rust. We don't have to rewrite the world in Rust, instead we can improve
+  what we already have by making components and new features of our software in Rust.

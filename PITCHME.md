@@ -78,9 +78,21 @@ fn main() {
 
 ## Data races
 - Rust guarantees pointers must be @color[orange](exclusively aliased) or @color[orange](mutated).
-- Send/Sync traits force types to explicitly define whether they can be sent between threads and/or shared between threads respectively.
+- Send/Sync traits define whether types can be sent between threads and/or shared between threads respectively.
 - Most structs that @color[orange](_own_) their fields automatically implement Send.
 - This prevents _many_ types of data races.
+
++++
+
+## Data races
+
+#### Send/Sync
+
+```rust
+// Stdlib definition of Send and Sync
+pub unsafe auto trait Send { }
+pub unsafe auto trait Sync { }
+```
 
 ---
 
@@ -241,8 +253,31 @@ fn main() {
 ## Unsafe code
 - Allows for raw pointers, aliasing, mutation, etc. All the things the Rust compiler normally prevents.
 - Unsafe should not be used to bypass safety guarantees, but instead to provide safe abstractions over unsafe code.
-- Many stdlib types that offer safety are built on unsafe code that has been hand verified.
+- Many stdlib types that offer safe abstractions are built on unsafe code that has been hand verified.
 - Necessary for FFI code.
+
++++
+
+
++++
+
+## Safe Unsafe Code
+
+#### Mutex example
+```rust
+use std::sync::{Arc, Mutex};
+use std::thread;
+
+fn main() {
+  let mutex = Arc::new(Mutex::new(0));
+  let c_mutex = mutex.clone();
+
+  thread::spawn(move || {
+      *c_mutex.lock().unwrap() = 10;
+  }).join().expect("thread::spawn failed");
+  assert_eq!(*mutex.lock().unwrap(), 10);
+}
+```
 
 ---
 
