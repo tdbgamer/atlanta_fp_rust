@@ -258,9 +258,6 @@ fn main() {
 
 +++
 
-
-+++
-
 ## Safe Unsafe Code
 
 #### Mutex example
