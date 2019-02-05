@@ -40,6 +40,7 @@
 +++
 
 ## Rust Features
+#### C
 ```c
 char* foo = calloc(4, sizeof(char))
 strcpy(ptr, "foo");
@@ -47,6 +48,7 @@ char* b = foo;
 free(foo);
 *b // Segfault
 ```
+#### Rust
 ```rust
 let foo = String::from("foo");
 let b = &foo;
