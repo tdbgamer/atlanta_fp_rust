@@ -37,6 +37,26 @@
 - Will not allow @color[orange](**memory leaks**).
 - @color[orange](**Zero-cost**) abstractions.
 
++++
+
+## Rust Features
+```c
+char* foo = calloc(4, sizeof(char))
+strcpy(ptr, "foo");
+char* b = foo;
+free(foo);
+*b // Segfault
+```
+```rust
+let foo = String::from("foo");
+let b = &foo;
+
+// Pretend foo is moved somewhere or deleted
+
+// Fails to compile!
+println!("{}", b)
+```
+
 ---
 
 ## Safe references
