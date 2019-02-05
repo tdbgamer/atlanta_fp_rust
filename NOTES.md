@@ -17,7 +17,8 @@ Without further ado, let's get started.
 - Python is slow.
 - I won't say it's impossible, but it's extremely unlikely a Python developer will write good C.
 - Rust can be used as a viable replacement in these cases.
-- As a Python developer, I would feel much more confident in my Rust code vs. my C code.
+- As a Python developer, I wouldn't trust C written by myself or pretty much anyone at my company.
+- On the other hand I _do_ feel confident that anyone I work with could easily create reliable, performance software in Rust.
 
 ## Rust Features
 - I'll go into each of these in a bit more detail over the next slides.
