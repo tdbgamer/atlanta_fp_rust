@@ -310,6 +310,7 @@ fn main() {
 ---
 
 ## Live coding!
+![Image](https://media.giphy.com/media/wxX5k09UYThio/giphy.gif)
 Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/) or by [installing rustup](https://www.rust-lang.org/tools/install).
 
 ---
