@@ -192,6 +192,12 @@ fn main() {
 
 ---
 
+## Live coding!
+Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/) or by [installing rustup](https://www.rust-lang.org/tools/install).
+![Image](https://media.giphy.com/media/wxX5k09UYThio/giphy.gif)
+
+---
+
 ## Zero-cost abstractions
 
 - Rust compiler offers strict guarantees about lifetimes, mutability, etc. that allow it to do big compile time optimizations.
@@ -306,12 +312,6 @@ fn main() {
 - Bindgen can be used to generate Rust definitely for C foreign functions.
 - Compatible with C ABI and can generate C header files for Rust libs through CBindgen.
 - Because CBindgen generates C header files, many interpreted languages can call out to Rust just like C.
-
----
-
-## Live coding!
-Feel free to code along with me using the [Rust playground](https://play.rust-lang.org/) or by [installing rustup](https://www.rust-lang.org/tools/install).
-![Image](https://media.giphy.com/media/wxX5k09UYThio/giphy.gif)
 
 ---
 
