@@ -78,7 +78,7 @@ fn main() {
 
 ## Data races
 - Rust guarantees pointers must be @color[orange](exclusively aliased) or @color[orange](mutated).
-- Send/Sync traits define whether types can be sent between threads and/or shared between threads respectively.
+- Send/Sync traits define whether types can be sent between threads and shared between threads respectively.
 - Most structs that @color[orange](_own_) their fields automatically implement Send.
 - This prevents _many_ types of data races.
 

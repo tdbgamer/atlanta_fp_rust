@@ -40,17 +40,20 @@ Without further ado, let's get started.
 ## Data races
 
 - I will define what it means to _own_ something in Rust in the next section.
+- Send types can be safely sent to another thread.
+- Sync types can be safely shared between multiple threads.
 
 #### Send/Sync
 - Send and Sync are unsafe, marker traits that the compiler uses for to determine thread safety of a type.
 - Marker traits have no methods to implement, and are used to indicate some inherent property of a type.
-- Types that implement Send indicate that it is safe to send it to a thread.
-- Types that implement Sync indicate that it is safe to share between multiple threads.
 - They are both auto traits that will attempt to implement themselves for all types that it can determine are inherently Send or Sync.
 - Manually implementing them is unsafe and is basically telling the compiler, "shutup I'll synchronize it."
 - Normally users don't implement Send/Sync themselves, they wrap whatever type they need in wrappers that implement Send/Sync.
+- I'll give some examples of those wrappers later.
 
 ## Ownership System
+- I know this might sound a little confusing so let's go over a few examples
+  and then I'll take any questions.
 
 #### Example 1
 - In this example foo is owned within that short scope.
@@ -78,7 +81,7 @@ Without further ado, let's get started.
 - To do so, the code must be designed in such a way that as much as possible can be determined at compile-time.
 - While Rust provides useful dynamic features like dynamic method dispatch, they should be used sparringly as those
   calls cannot be inlined at compile time and very little optimization can be done.
-- In languages like Java, dynamic method dispatch all over the place is fine because the JIT can figure things out at compile time
+- In languages like Java, dynamic method dispatch all over the place is fine because the JIT can figure things out at run-time
   that allow it to inline and optimize very dynamic code.
 - The downside for some is that this forces developers to break away from the traditional OOP paradigm.
 
