@@ -46,6 +46,7 @@ char* foo = calloc(4, sizeof(char))
 strcpy(ptr, "foo");
 char* b = foo;
 free(foo);
+puts(b); // References bad memory
 free(b); // Security vulnerability
 ```
 #### Rust
