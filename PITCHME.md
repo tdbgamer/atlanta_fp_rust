@@ -331,8 +331,8 @@ fn main() {
 #### Cons
 - GIL limits parallel processing.
 - Very slow
-    - pypy is making things better, but still needs work to be compatible with many Python libraries.
-    - Scientific Python users have to offload as much work as possible onto pandas/numpy to be performant.
+    - Pypy is making things better, but still needs work to be compatible with legacy Python libraries.
+    - Scientific Python users have to offload work onto pandas/numpy to be performant.
 - Difficult to refactor.
     - Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
 
