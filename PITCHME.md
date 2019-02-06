@@ -330,10 +330,8 @@ fn main() {
 
 #### Cons
 - GIL limits parallel processing.
-- Very slow
-    - Pypy is making things better, but still needs work to be compatible with legacy Python libraries.
-- Difficult to refactor.
-    - Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
+- Very slow. Pypy is making things better, but still needs work to be compatible with legacy Python libraries.
+- Difficult to refactor. Efforts like Mypy might improve this in the future, but would require mass adoption to be useful in many cases.
 
 +++
 
